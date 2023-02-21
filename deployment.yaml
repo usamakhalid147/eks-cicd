@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eks-webapp
+  labels:
+    app: eks-webapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: eks-webapp
+  template:
+    metadata:
+      labels:
+        app: eks-webapp
+    spec:
+      containers:
+        - name: eks-webapp
+          image: 
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
