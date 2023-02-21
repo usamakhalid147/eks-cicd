@@ -3,10 +3,8 @@ kind: Service
 metadata:
   name: eks-webapp
 spec:
+  ports:
+    - port: 80
+      protocol: TCP
   selector:
     app: eks-webapp
-  ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 5000
-  type: LoadBalancer
